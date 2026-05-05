@@ -2,19 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="150" alt="Immutable Backup Logo" />
 
-<h1>Immutable Backup & Ransomware Resilience Platform</h1>
+<h1>Immutable Backup Design</h1>
 
-<p><strong>The Institutional-Grade Platform for WORM-Enforced Data Protection, Multi-Cloud Resilience, and Automated Disaster Recovery</strong></p>
+<p><strong>The Institutional-Grade Platform for WORM-Enforced Data Protection, Multi-Cloud Resilience, and Automated Disaster Recovery.</strong></p>
 
-[![Standard: NIST--CSF](https://img.shields.io/badge/Standard-NIST--CSF-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Security: Immutable--Vault](https://img.shields.io/badge/Security-Immutable--Vault-rose.svg?style=for-the-badge&labelColor=000000)]()
-[![Resilience: Ransomware--Proof](https://img.shields.io/badge/Resilience-Ransomware--Proof-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Standard: Resilience-Excellence](https://img.shields.io/badge/Standard-Resilience--Excellence-blue.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Ransomware--Immunity](https://img.shields.io/badge/Focus-Ransomware--Immunity-rose.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Data is the target; immutability is the shield."** 
-> The Immutable Backup Design Platform is a flagship solution for modern data protection. By orchestrating WORM (Write-Once-Read-Many) storage, cross-region replication, and automated integrity validation, it ensures that your business can recover from any cyber catastrophe or ransomware event.
+> **Immutable Backup Design** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global resilience operations. It orchestrates the complex lifecycle of data protection—from WORM-locked snapshots and air-gapped replication to AIOps-driven anomaly detection and unified recovery governance.
 
 </div>
 
@@ -22,336 +21,262 @@
 
 ## 🏛️ Executive Summary
 
-The **Immutable Backup & Ransomware Resilience Platform** is a specialized flagship solution designed for CIOs, CISOs, and Disaster Recovery Experts. In an era of sophisticated ransomware that specifically targets backup infrastructure, traditional backup strategies are no longer sufficient. Organizations need a "Last Line of Defense" that is cryptographically and logically immune to deletion or alteration.
+Fragmented backup strategies and manual recovery processes are strategic operational liabilities; lack of centralized immutable orchestration is a primary barrier to organizational ransomware resilience. Organizations fail to achieve guaranteed recovery not because of a lack of storage, but because of fragmented backup standards, lack of automated lock validation, and an inability to orchestrate immutable landing zones with operational precision.
 
-This platform provides a **Unified Resilience Plane**. It demonstrates how to orchestrate immutable vaults—using **S3 Object Lock**, **Azure Immutable Blobs**, and **FastAPI**—to create a "Cyber Recovery Vault." By automating **DR Drills**, **Anomaly Detection**, and **Air-Gapped Replication**, it ensures a guaranteed recovery path even in the event of a full environmental compromise.
-
----
-
-## 📉 The "Recovery Gap" Problem
-
-Enterprises operating without immutable backups face existential risks:
-- **Backup Deletion Attacks**: Modern ransomware systematically finds and deletes backups before encrypting primary data.
-- **Ransomware Dwell Time**: Malicious actors staying inside the network for months, silently corrupting backups over time.
-- **Complexity of Scale**: Difficulty managing consistent backup policies across AWS, Azure, GCP, and on-premises VMware estates.
-- **Compliance Failure**: Inability to meet regulatory requirements (SEC 17a-4, FINRA, HIPAA) for unalterable record keeping.
+This platform provides the **Resilience Intelligence Plane**. It implements a complete **Enterprise Immutable-as-Code Framework**, enabling Backup and Security teams to manage global data protection as first-class citizens. By automating the identification of ransomware patterns through real-time backup analysis and orchestrating the vaulting of air-gapped replicas, we ensure that every organizational asset—from critical database clusters to routine application snapshots—is locked by default, audited for history, and strictly aligned with institutional resilience frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Cyber Insurance Readiness**: Meeting the strict requirements for immutable backups required by modern cyber-insurance underwriters.
-- **Ransomware Immunity**: Moving from "Recovery Hope" to "Recovery Guarantee" through WORM enforcement.
-- **Zero Trust Data Protection**: Applying least-privilege and cross-account isolation to the backup plane.
+### 1. Principal Architecture: Global Immutable Backup & Resilience Intelligence Plane
+This diagram illustrates the end-to-end flow from multi-cloud backup ingestion and WORM locking to air-gapped replication, isolated recovery, and institutional resilience auditing.
 
-### 💰 Business Outcomes
-- **Zero Data Loss in Ransomware Events**: WORM-locked backups ensure that critical datasets cannot be encrypted by attackers.
-- **90% Faster Recovery Time (RTO)**: Automated recovery orchestration replaces manual, error-prone restore processes.
-- **Minimized RPO**: Continuous, immutable replication ensures that only the most recent (and verified) data is restored.
+```mermaid
+graph LR
+    %% Subgraph Definitions
+    subgraph BackupIngress["Multi-Cloud & Workload Ingress"]
+        direction TB
+        EBS_Disk_Snaps["EBS / Managed Disk Snapshots"]
+        DB_Clusters["RDS / SQL DB Backups"]
+        K8s_Persistent["Velero / K8s PV Backups"]
+    end
+
+    subgraph IntelligenceEngine["Resilience Intelligence Hub"]
+        direction TB
+        API["FastAPI Resilience Gateway"]
+        LockEngine["WORM Enforcement Hub"]
+        ReplicationOrch["Air-Gap Replication Orch"]
+        RecoveryOrch["Isolated Recovery Runner"]
+    end
+
+    subgraph OperationsPlane["Distributed Backup Fleet"]
+        direction TB
+        ImmutabilityNodes["Compliance-Mode Lockers"]
+        IntegrityDetectors["AIOps Entropy Scanners"]
+        VaultSync["Cross-Account Vault Sync"]
+    end
+
+    subgraph OperationsHub["Institutional Resilience Hub"]
+        direction TB
+        Scorecard["Resilience Maturity Score"]
+        Analytics["RTO & RPO Adherence Stats"]
+        Audit["Forensic Backup Metadata Lake"]
+    end
+
+    subgraph DevOps["Immutable-as-Code Framework"]
+        direction TB
+        TF["Terraform Backup Modules"]
+        RansomwareBot["Backup Anomaly Validator"]
+        ChatOps["Restore Approval Hub"]
+    end
+
+    %% Flow Arrows
+    BackupIngress -->|1. Submit Backup| API
+    API -->|2. Enforce Lock| LockEngine
+    LockEngine -->|3. Sync Air-Gap| ReplicationOrch
+    ReplicationOrch -->|4. Manage Recovery| RecoveryOrch
+    
+    RecoveryOrch -->|5. Execute Validation| OperationsPlane
+    OperationsPlane -->|6. Notify Status| ChatOps
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track Success| Analytics
+    Scorecard -->|9. Record Lock| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    RansomwareBot -->|11. Inject Entropy Risk| LockEngine
+    Audit -->|12. Improve Lock| ImmutabilityNodes
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8eaf6,stroke:#1a237e,stroke-width:2px;
+    classDef operations fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class BackupIngress ingress;
+    class IntelligenceEngine intel;
+    class OperationsPlane operations;
+    class OperationsHub ops;
+    class DevOps devops;
+```
+
+### 2. The Immutable Backup Lifecycle Flow
+The continuous path of a protected asset from initial backup (snapshot) and WORM locking to active verification, air-gapped replication, restoration, and institutional forensic auditing.
+
+```mermaid
+graph LR
+    Backup["Backup (Snapshot)"] --> Lock["Lock (WORM)"]
+    Lock --> Verify["Verify (Check)"]
+    Verify --> Restore["Restore & Audit"]
+```
+
+### 3. Distributed Multi-Cloud Immutable Storage Topology
+Strategically orchestrating immutable backups across AWS, Azure, GCP, and on-premises environments, providing a unified institutional view of global data protection and recovery readiness.
+
+```mermaid
+graph LR
+    AWS["AWS: S3 Object Lock"] -->|Backup| Hub["Unified Resilience Hub"]
+    Azure["Azure: Immutable Blob"] -->|Backup| Hub
+    GCP["GCP: Bucket Retention"] -->|Backup| Hub
+    Hub --- Logic["Global Recovery Engine"]
+```
+
+### 4. Air-Gapped Replication & Vaulting Flow
+Executing complex logic for securely moving locked data to an isolated recovery environment (IRE) in a separate account or region, ensuring institutional protection against source-environment compromise.
+
+```mermaid
+graph TD
+    Source["Source Account Vault"] -->|Sync| AirGap["Isolated Recovery Env (IRE)"]
+    AirGap -->|Verify| Lock["Immutable WORM Vault"]
+    Lock -->|Evaluate| Action["PATH: Recovery Proof"]
+    Action --- Estimate["Recovery Readiness Score"]
+```
+
+### 5. Object Lock & Retention Policy Governance Flow
+Automatically enforcing legal holds and compliance-mode locking—including retention durations—directly via policy-as-code, ensuring organizational audit readiness by default.
+
+```mermaid
+graph LR
+    Snapshot["Raw Snapshot"] -->|Apply| Guard["WORM Lock Enforcer"]
+    Guard -->|Violate| Alert["Immutability Breach Alert"]
+    Guard -->|Pass| Verify["Status: Locked (WORM)"]
+    Verify --- Audit["Retention Compliance Log"]
+```
+
+### 6. Isolated Recovery Environment (IRE) Restore Flow
+Managing the lifecycle of a restoration test, automatically verifying backup integrity in a secured sandbox before approving production restoration, ensuring zero-latency recovery confidence.
+
+```mermaid
+graph LR
+    Request["Restore Request"] -->|Provision| Sandbox["Isolated Sandbox (IRE)"]
+    Sandbox -->|Hydrate| App["Active Application Test"]
+    App -->|Verified| Report["Recovery Success Report"]
+    Report --- Audit["Restore Compliance Log"]
+```
+
+### 7. Institutional Resilience Maturity Scorecard
+Grading organizational performance based on key indicators: Backup Success Rate, RTO (Restore Time) Adherence, and RPO (Point) Adherence Index.
+
+```mermaid
+graph TD
+    Post["Resilience Health: 98%"] --> Risk["Recovery Gap: 2%"]
+    Post --- C1["Backup Rate (100%)"]
+    Post --- C2["RTO Accuracy (95%)"]
+```
+
+### 8. Identity & RBAC for Backup Governance
+Managing fine-grained access to backup schedules, restore triggers, and audit logs between Backup Admins, Security Auditors, and Restore Operators.
+
+```mermaid
+graph TD
+    Admin["Backup Admin"] --> Hub["Manage protection jobs"]
+    Auditor["Security Auditor"] --> Exec["Execute compliance checks"]
+    Operator["Restore Operator"] --> Audit["Verify Recovery Proofs"]
+```
+
+### 9. IaC Deployment: Immutable-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the resilience tracking hubs, immutability workers, and forensic metadata lakes.
+
+```mermaid
+graph LR
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Resilience Control Plane"]
+    Engine --> Clusters["HA Validation Fleet"]
+```
+
+### 10. AIOps Backup Anomaly & Ransomware Validation Flow
+Using advanced analytics to identify sudden surges in changed data, suspicious delete attempts, or unusual entropy velocities that could result in institutional data loss.
+
+```mermaid
+graph LR
+    Entropy["Backup Entropy Trend"] --> Analyzer["Anomaly Detection Bot"]
+    Analyzer -->|Anomaly| Alert["Ransomware Attack Alert"]
+    Analyzer -->|Normal| Pass["Status Optimal"]
+```
+
+### 11. Metadata Lake for Forensic Backup Audit
+Storing long-term records of every backup job, every lock event recorded, and every restore verification for institutional record-keeping, compliance auditing, and post-event forensics.
+
+```mermaid
+graph LR
+    Job["Backup Job Interaction"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Resilience Metadata Lake"]
+    Lake --> Trends["RTO Efficiency Trends"]
+```
 
 ---
 
-## 📐 Architecture Storytelling: 30+ Advanced Diagrams
+## 🏛️ Core Resilience Pillars
 
-### 1. Executive Resilience Architecture
-*The orchestration of immutable vaults into a guaranteed recovery path.*
-```mermaid
-graph TD
-    subgraph "Resilience Platform"
-        Portal[Resilience Dashboard]
-        Engine[Backup Engine]
-        Validate[Validation Engine]
-        Recovery[Recovery Engine]
-        DB[(Metadata Ledger)]
-    end
-
-    subgraph "Immutable Vaults"
-        S3[AWS S3 Object Lock]
-        Blob[Azure Immutable Blob]
-        GCS[GCP Bucket Lock]
-    end
-
-    Engine --> S3
-    Engine --> Blob
-    Engine --> GCS
-    Validate --> S3
-    Validate --> Blob
-    Validate --> GCS
-    Portal --> DB
-```
-
-### 2. Hybrid Backup Topology
-*Protecting local VMware workloads and cloud-native Kubernetes apps.*
-```mermaid
-graph LR
-    subgraph "On-Prem"
-        VM[VMware / DBs]
-    end
-    subgraph "Cloud Gateway"
-        GW[Backup Gateway]
-    end
-    subgraph "Immutable Cloud"
-        Vault[WORM Storage Vault]
-    end
-    VM --> GW
-    GW --> Vault
-```
-
-### 3. Backup Data Flow (Immutable)
-*The lifecycle of a protected block.*
-```mermaid
-sequenceDiagram
-    participant Source as Data Source
-    participant Engine as Backup Engine
-    participant Vault as Immutable Vault
-    participant Lock as WORM Lock
-
-    Source->>Engine: Data Read
-    Engine->>Engine: Encrypt & Hash
-    Engine->>Vault: Write Object
-    Vault->>Lock: Apply Compliance Lock (30 Days)
-    Lock-->>Engine: Confirm Immutability
-```
-
-### 4. S3 Object Lock Model (Compliance Mode)
-*Ensuring that even root admins cannot delete backups.*
-```mermaid
-graph TD
-    User[Any User (inc Root)] --> Delete[Attempt Delete]
-    Delete --> Lock{Object Lock?}
-    Lock -- "Yes" --> Deny[Access Denied: WORM Policy]
-    Lock -- "No" --> Proceed[Delete Block]
-```
-
-### 5. Cross-Region Immutable Replication
-*Resilience against regional outages and account compromise.*
-```mermaid
-graph LR
-    subgraph "Account A - Prod"
-        P[Source Bucket]
-    end
-    subgraph "Account B - Isolated"
-        D[Replication Vault (Immutable)]
-    end
-    P -->|Cross-Account Sync| D
-```
-
-### 6. Backup Anomaly Detection Flow
-*Identifying ransomware corruption during the backup window.*
-```mermaid
-graph TD
-    Scan[Post-Backup Scan] --> Entropy[Calculate Entropy]
-    Entropy --> Change[Analyze Change Rate]
-    Change -->|Spike Found| Alert[Ransomware Warning]
-    Change -->|Normal| Pass[Integrity Verified]
-```
-
-### 7. Recovery Orchestration (DR Drill)
-*Automating the "Resume Business" process.*
-```mermaid
-graph TD
-    Trigger[Start DR Drill] --> Prep[Provision Isolated VNET]
-    Prep --> Restore[Pull Immutable Backups]
-    Restore --> Mount[Mount & Verify Apps]
-    Mount --> Report[SLA Success Report]
-```
-
-### 8. Air-Gap Simulation Model
-*Logical isolation using account separation and private link.*
-```mermaid
-graph LR
-    Prod[Prod Network] --> Private[Private Link]
-    Private --> Isolated[Vault Network (Air-Gapped)]
-    Isolated -->|No Inbound| S3[Isolated S3]
-```
-
-### 9. Backup Chain Integrity Validation
-*Ensuring full restorability of incremental chains.*
-```mermaid
-graph TD
-    Full[Full Backup] <-> Inc1[Inc 1]
-    Inc1 <-> Inc2[Inc 2]
-    Inc2 --> Validate[Chain Hash Check]
-```
-
-### 10. Tiered Storage Lifecycle (Immutable)
-*Moving from Hot Vault to Cold Glacier.*
-```mermaid
-graph LR
-    Hot[S3 Standard (Lock)] -->|30 Days| Cool[S3 IA (Lock)]
-    Cool -->|90 Days| Cold[Glacier (Lock)]
-```
-
-### 11. Kubernetes Velero Flow
-```mermaid
-graph TD
-    K8s[Cluster] --> Velero[Velero Agent]
-    Velero --> S3[Immutable S3]
-```
-
-### 12. Snapshot Immutability (EBS/Managed Disk)
-```mermaid
-graph LR
-    Vol[Volume] --> Snap[Snapshot]
-    Snap --> Vault[AWS Backup Vault Lock]
-```
-
-### 13. Retention Enforcement Policy
-```mermaid
-graph LR
-    Policy[7 Year Retention] --> Engine[Enforcement]
-    Engine --> Storage[WORM Bucket]
-```
-
-### 14. Access Control (RBAC) for Recovery
-```mermaid
-graph TD
-    Admin[Admin] --> MFA[MFA Check]
-    MFA --> Action[Authorize Restore]
-```
-
-### 15. Legal Hold Workflow
-```mermaid
-graph TD
-    Legal[Legal Team] --> Hold[Apply Hold]
-    Hold --> Lock[Extend WORM Expiry]
-```
-
-### 16. Backup Tamper Detection
-```mermaid
-graph LR
-    S[Storage] --> H[Hash Check]
-    H -->|Mismatch| A[Alert: Tampering]
-```
-
-### 17. Disaster Recovery Topology
-```mermaid
-graph LR
-    US[US West] <->|Replicate| EU[EU West]
-```
-
-### 18. Multi-Cloud Storage Topology
-```mermaid
-graph TD
-    App[App] --> AWS[AWS]
-    App --> AZ[Azure]
-```
-
-### 19. Backup Lifecycle state machine
-```mermaid
-stateDiagram-v2
-    Creation --> Encryption
-    Encryption --> Immutability
-    Immutability --> Validation
-    Validation --> Archival
-```
-
-### 20. DR Drill Workflow
-```mermaid
-graph TD
-    Plan[Plan] --> Run[Execute]
-    Run --> Verify[Verify]
-    Verify --> Report[Report]
-```
-
-### 21. AWS S3 object lock flow
-```mermaid
-graph LR
-    S[S3] --> L[Lock]
-```
-
-### 22. Azure immutable blob flow
-```mermaid
-graph LR
-    A[Azure] --> L[Lock]
-```
-
-### 23. GCP retention policies flow
-```mermaid
-graph LR
-    G[GCP] --> P[Policy]
-```
-
-### 24. VMware snapshot flow
-```mermaid
-graph LR
-    V[VMware] --> S[Snapshot]
-```
-
-### 25. Kubernetes Velero flow
-```mermaid
-graph LR
-    K[K8s] --> V[Velero]
-```
-
-### 26. Database backup flow
-```mermaid
-graph LR
-    D[DB] --> B[Backup]
-```
-
-### 27. SaaS backup flow
-```mermaid
-graph LR
-    S[SaaS] --> B[Backup]
-```
-
-### 28. Replication flow
-```mermaid
-graph LR
-    S[Source] --> D[Dest]
-```
-
-### 29. Monitoring pipeline flow
-```mermaid
-graph LR
-    L[Logs] --> M[Monitor]
-```
-
-### 30. Alerting flow
-```mermaid
-graph LR
-    M[Metric] --> A[Alert]
-```
+1.  **Unified Resilience Coordination**: Maximizing recovery speed by centralizing all data protection through a single institutional plane.
+2.  **Automated WORM Enforcement**: Eliminating "mutable backup" scenarios through proactive and immutable object locking.
+3.  **Sequential Replication Intelligence**: Ensuring zero-interruption vaulting through dependency-aware air-gapped synchronization.
+4.  **Zero-Trust Account Protection**: Automatically enforcing cross-account isolation and identity-based access across all backup vaults.
+5.  **Autonomous Recovery Logic**: Guaranteeing availability through automated industry-specific restoration runbooks.
+6.  **Full Resilience Auditability**: Immutable recording of every lock event and restore verification for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### Backup Orchestration Engine
-- **Processing**: Python 3.11+ / FastAPI
-- **Automation**: Celery / Redis (Concurrent Backup Jobs).
-- **Integrations**: AWS SDK (Boto3), Azure SDK, Google Cloud Storage Client.
+### Resilience Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **WORM Engine**: Integration with S3 Object Lock, Azure Immutable Blobs, and GCS Bucket Retention.
+*   **Replication Core**: Custom Python-based logic for cross-region and cross-account vault synchronization.
+*   **Persistence**: PostgreSQL (Resilience Ledger) and Redis (Live Job State).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege resilience management access.
 
-### Frontend (Resilience Dashboard)
-- **Framework**: React 18 / Vite
-- **Visuals**: Recharts (Success/Failure Trends & Capacity Metrics).
-- **Icons**: Lucide Protection & Hard Drive Icons.
+### Governance Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Navy, Rose (Modern high-fidelity resilience aesthetic).
+*   **Visualization**: D3.js for vault topologies and Recharts for RTO velocity analytics.
 
-### Infrastructure
-- **IaC**: Terraform (S3 Object Lock / Replication Config).
-- **Secrets**: AWS Secrets Manager (Storage Access Keys).
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS) for management plane.
+*   **Isolated Vault**: Air-gapped storage clusters with cryptographically enforced WORM policies.
+*   **IaC**: Modular Terraform for deploying the resilience landing zone and validation fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/res_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/vaults`** | Immutable storage sinks | S3, Object Lock, IAM |
+| **`infrastructure/replicators`** | Air-gap sync workers | Lambda, Step Functions |
+| **`infrastructure/auditing`** | Forensic resilience sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the resilience platform
 git clone https://github.com/devopstrio/immutable-backup-design.git
 cd immutable-backup-design
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch services
-make up
+# Launch the Resilience stack
+make init
+
+# Trigger a mock backup ingestion and automated WORM-locking simulation
+make simulate-resilience
 ```
+
 Access the Resilience Dashboard at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
